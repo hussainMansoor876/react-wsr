@@ -82,7 +82,7 @@ class Review extends React.Component {
     async componentWillMount() {
         const { allData } = this.state
         const { user } = this.props
-        await axios.get(`https://wsr-hermes-server.herokuapp.com/subform/get-user/${user._id}`)
+        await axios.get(`https://wsr-hermes-server786.herokuapp.com/subform/get-user/${user._id}`)
             .then((res) => {
                 const { data } = res.data
                 data.map((v, i) => {
@@ -138,7 +138,7 @@ class Review extends React.Component {
                     formData.append('_id', viewForm._id)
                     formData.append('zip', viewForm.zip)
                     formData.append('files', JSON.stringify(viewForm.files))
-                    axios.post('https://wsr-hermes-server.herokuapp.com/subform/update-agent-form', formData)
+                    axios.post('https://wsr-hermes-server786.herokuapp.com/subform/update-agent-form', formData)
                         .then((result) => {
                             if (result.data.success) {
                                 toast.success("Updated successfully!!!")
@@ -168,7 +168,7 @@ class Review extends React.Component {
 
     delFile(item) {
         const { viewForm } = this.state
-        axios.post('https://wsr-hermes-server.herokuapp.com/subform/del-file', {
+        axios.post('https://wsr-hermes-server786.herokuapp.com/subform/del-file', {
             file: item,
             _id: viewForm._id
         })
@@ -190,7 +190,7 @@ class Review extends React.Component {
     }
 
     approveForm(id) {
-        axios.post('https://wsr-hermes-server.herokuapp.com/subform/approve', { id })
+        axios.post('https://wsr-hermes-server786.herokuapp.com/subform/approve', { id })
             .then((result) => {
                 if (result.data.success) {
                     window.location.reload()

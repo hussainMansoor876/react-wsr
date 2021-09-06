@@ -68,7 +68,7 @@ class Dashboard extends React.Component {
         var obj = { "Buy": 0, "Sell": 0, "Rental": 0, "Whole": 0, "Referral": 0 }
         var arr = []
         var allObj = {}
-        axios.post('https://wsr-hermes-server.herokuapp.com/admin/getAll', {
+        axios.post('https://wsr-hermes-server786.herokuapp.com/admin/getAll', {
             startDate: startDate.toArray(),
             endDate: endDate.toArray()
         })
@@ -149,7 +149,7 @@ class Dashboard extends React.Component {
                     })
                 }
 
-                axios.get('https://wsr-hermes-server.herokuapp.com/admin/getusers')
+                axios.get('https://wsr-hermes-server786.herokuapp.com/admin/getusers')
                     .then((res) => {
                         var { data } = res.data
                         var sortableName = []
@@ -167,7 +167,7 @@ class Dashboard extends React.Component {
                             AgentData.series[0].data = sortableVal.length > 10 ? sortableVal.slice(0, 10) : sortableVal
                             AgentData.options.xaxis.categories = sortableName.length > 10 ? sortableName.slice(0, 10) : sortableName
                             if (allData.length) {
-                                axios.post(`https://wsr-hermes-server.herokuapp.com/admin/get-user/${allData[0]._id}`, {
+                                axios.post(`https://wsr-hermes-server786.herokuapp.com/admin/get-user/${allData[0]._id}`, {
                                     startDate: startDate.toArray(),
                                     endDate: endDate.toArray()
                                 })
@@ -208,7 +208,7 @@ class Dashboard extends React.Component {
             cap: 0,
             recruits: 0
         }
-        await axios.post(`https://wsr-hermes-server.herokuapp.com/admin/get-user/${id}`, {
+        await axios.post(`https://wsr-hermes-server786.herokuapp.com/admin/get-user/${id}`, {
             startDate: StartDateValue.toArray(),
             endDate: endDate.toArray()
         })
@@ -244,7 +244,7 @@ class Dashboard extends React.Component {
             month: { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
             monthLine: { 0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 }
         }
-        axios.post('https://wsr-hermes-server.herokuapp.com/admin/getAll', {
+        axios.post('https://wsr-hermes-server786.herokuapp.com/admin/getAll', {
             startDate: StartDateValue.toArray(),
             endDate: endDate.toArray()
         })
@@ -321,7 +321,7 @@ class Dashboard extends React.Component {
                                 }
                             }
                         }
-                        axios.post(`https://wsr-hermes-server.herokuapp.com/admin/get-user/${allData[0]._id}`, {
+                        axios.post(`https://wsr-hermes-server786.herokuapp.com/admin/get-user/${allData[0]._id}`, {
                             startDate: StartDateValue.toArray(),
                             endDate: endDate.toArray()
                         })

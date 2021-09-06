@@ -44,7 +44,7 @@ class Login extends React.Component {
                     return toast.error("Password must be Atleast 6 Digits!");
                 }
                 this.setState({ loading: true, disable: true })
-                axios.post('https://wsr-hermes-server.herokuapp.com/login/signin', values)
+                axios.post('https://wsr-hermes-server786.herokuapp.com/login/signin', values)
                     .then((result) => {
                         if (result.data.success) {
                             this.props.loginUser(result.data.user)

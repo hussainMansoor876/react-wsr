@@ -81,7 +81,7 @@ class Signup extends React.Component {
                     return toast.error("Zip code must be Atleast 4 Numbers!");
                 }
                 this.setState({ loading: true, disable: true })
-                axios.post('https://wsr-hermes-server.herokuapp.com/login/signup', values)
+                axios.post('https://wsr-hermes-server786.herokuapp.com/login/signup', values)
                     .then((result) => {
                         if (result.data.success) {
                             this.props.loginUser(result.data.user)
